@@ -82,8 +82,8 @@ static void queueMouseWheelEvent(ImGui_ImplJuce_Data *bd, float wh_x, float wh_y
 {
   ImGuiInputEvent e;
   e.Type = ImGuiInputEventType_MouseWheel;
-  e.MouseWheel.WheelX = wh_x;
-  e.MouseWheel.WheelY = wh_y;
+  e.MouseWheel.WheelX = wh_x * 5.0f;
+  e.MouseWheel.WheelY = wh_y * 5.0f;
   {
     const juce::ScopedLock lk(bd->Mutex);
     bd->Events.add(e);
